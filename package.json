@@ -1,0 +1,23 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "This is a E-commerce website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Copter Panyaphon",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.0",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "pug": "^3.0.3",
+    "serve-favicon": "^2.5.0"
+  }
+}

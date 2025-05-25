@@ -1,0 +1,48 @@
+//- layout.pug - Base layout template
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/style.css")
+    title= title || "ShopEase - Your Online Store"
+    style
+    //-   include:css styles/main.css
+  body
+    //- Header Component
+    header
+      .container
+        .header-content
+          a.logo(href="#", onclick="showPage('home')") ShopEase
+          nav
+            ul.nav-menu
+              li: a(href="#", onclick="showPage('home')") Home
+              li: a(href="#", onclick="showPage('products')") Products
+              li: a(href="#", onclick="showPage('categories')") Categories
+              li: a(href="#", onclick="showPage('contact')") Contact
+          .user-actions
+            if user
+              a.btn.btn-secondary(href="#", onclick="showPage('profile')") Profile
+              a.cart-icon(href="#", onclick="showPage('cart')")
+                | 🛒
+                span.cart-count= cartCount || 0
+            else
+              a.btn.btn-secondary(href="#", onclick="showPage('login')") Login
+              a.btn.btn-primary(href="#", onclick="showPage('register')") Register
+              a.cart-icon(href="#", onclick="showPage('cart')")
+                | 🛒
+                span.cart-count= cartCount || 0
+
+    //- Search Section
+    section.search-section
+      .container
+        .search-bar
+          input.search-input(type="text", placeholder="Search for products...")
+          button.search-btn Search
+
+    //- Main Content
+    main
+      block content
+
+    //- script
+    //-   include:js scripts/main.js
