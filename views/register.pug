@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  #register.page
+    .container
+      h1.page-title Register
+      
+      .form-container
+        form(method="POST", action="/register")
+          .form-group
+            label.form-label Full Name
+            input.form-input(type="text", name="fullName", placeholder="Enter your full name", required)
+          .form-group
+            label.form-label Email Address
+            input.form-input(type="email", name="email", placeholder="Enter your email", required)
+          .form-group
+            label.form-label Password
+            input.form-input(type="password", name="password", placeholder="Create a password", required)
+          .form-group
+            label.form-label Confirm Password
+            input.form-input(type="password", name="confirmPassword", placeholder="Confirm your password", required)
+          .form-group
+            button.btn.btn-primary(type="submit", style="width: 100%;") Register
+          div(style="text-align: center; margin-top: 1rem;")
+            p Already have an account? 
+              a(href="#", onclick="showPage('login')", style="color: #667eea;") Login here

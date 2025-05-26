@@ -1,0 +1,66 @@
+//- ===========================
+//- checkout.pug - Checkout page template
+//- ===========================
+extends layout
+
+block content
+  #checkout.page
+    .container
+      h1.page-title Checkout
+      
+      .checkout-steps
+        .step.active
+          .step-number 1
+          span Shipping
+        .step
+          .step-number 2
+          span Payment
+        .step
+          .step-number 3
+          span Review
+
+      div(style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;")
+        .form-container
+          h3(style="margin-bottom: 1.5rem;") Shipping Information
+          form(method="POST", action="/checkout")
+            div(style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;")
+              .form-group
+                label.form-label First Name
+                input.form-input(type="text", name="firstName", placeholder="First name", required)
+              .form-group
+                label.form-label Last Name
+                input.form-input(type="text", name="lastName", placeholder="Last name", required)
+            .form-group
+              label.form-label Address
+              input.form-input(type="text", name="address", placeholder="Street address", required)
+            div(style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;")
+              .form-group
+                label.form-label City
+                input.form-input(type="text", name="city", placeholder="City", required)
+              .form-group
+                label.form-label State
+                input.form-input(type="text", name="state", placeholder="State", required)
+              .form-group
+                label.form-label ZIP Code
+                input.form-input(type="text", name="zipCode", placeholder="ZIP", required)
+            .form-group
+              button.btn.btn-primary(type="submit", style="width: 100%;") Continue to Payment
+
+        .cart-summary
+          h3(style="margin-bottom: 1rem;") Order Summary
+          each item in orderSummary || defaultOrderSummary
+            .summary-row
+              span= `${item.name} (${item.quantity}x)`
+              span $#{item.total}
+          .summary-row
+            span Subtotal:
+            span $#{orderTotal.subtotal || '1,599.96'}
+          .summary-row
+            span Shipping:
+            span $#{orderTotal.shipping || '9.99'}
+          .summary-row
+            span Tax:
+            span $#{orderTotal.tax || '128.00'}
+          .summary-row.summary-total
+            span Total:
+            span $#{orderTotal.total || '1,737.95'}

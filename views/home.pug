@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    #home.page.active
+        .container
+            h1.page-title Welcome to ShopEase
+            p(style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #666;") 
+                | Discover amazing products at unbeatable prices
+
+            .product-grid
+                if featuredProducts && featuredProducts.length
+                    each product in featuredProducts
+                        .product-card
+                            .product-image= product.icon
+                            .product-info
+                                h3.product-title= product.name
+                                .product-price $#{product.price}
+                                p.product-description= product.description
+                                button.add-to-cart Add to Cart
+                else if defaultProducts && defaultProducts.length
+                    each product in defaultProducts
+                        .product-card
+                            .product-image= product.icon
+                            .product-info
+                                h3.product-title= product.name
+                                .product-price $#{product.price}
+                                p.product-description= product.description
+                                button.add-to-cart Add to Cart
+                else
+                    p There is no product exist right now.

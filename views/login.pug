@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  #login.page
+    .container
+      h1.page-title Login
+      
+      .form-container
+        form(method="POST", action="/login")
+          .form-group
+            label.form-label Email Address
+            input.form-input(type="email", name="email", placeholder="Enter your email", required)
+          .form-group
+            label.form-label Password
+            input.form-input(type="password", name="password", placeholder="Enter your password", required)
+          .form-group
+            button.btn.btn-primary(type="submit", style="width: 100%;") Login
+          div(style="text-align: center; margin-top: 1rem;")
+            p Don't have an account? 
+              a(href="#", onclick="showPage('register')", style="color: #667eea;") Register here

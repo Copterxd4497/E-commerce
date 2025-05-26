@@ -1,0 +1,51 @@
+//- ===========================
+//- cart.pug - Shopping cart template
+//- ===========================
+extends layout
+
+block content
+  #cart.page
+    .container
+      h1.page-title Shopping Cart
+      
+      .cart-container
+        if cartItems && cartItems.length > 0
+          each item in cartItems
+            .cart-item
+              .cart-item-image= item.icon
+              .cart-item-details
+                .cart-item-name= item.name
+                .cart-item-price $#{item.price}
+                .quantity-controls
+                  button.quantity-btn -
+                  input.quantity-input(type="number", value=item.quantity, min="1")
+                  button.quantity-btn +
+              button.btn.btn-secondary Remove
+        else
+          each item in defaultCartItems
+            .cart-item
+              .cart-item-image= item.icon
+              .cart-item-details
+                .cart-item-name= item.name
+                .cart-item-price $#{item.price}
+                .quantity-controls
+                  button.quantity-btn -
+                  input.quantity-input(type="number", value=item.quantity, min="1")
+                  button.quantity-btn +
+              button.btn.btn-secondary Remove
+
+        .cart-summary
+          .summary-row
+            span Subtotal:
+            span $#{cartSummary.subtotal || '1,399.97'}
+          .summary-row
+            span Shipping:
+            span $#{cartSummary.shipping || '9.99'}
+          .summary-row
+            span Tax:
+            span $#{cartSummary.tax || '112.00'}
+          .summary-row.summary-total
+            span Total:
+            span $#{cartSummary.total || '1,521.96'}
+          button.btn.btn-primary(style="width: 100%; margin-top: 1rem;", onclick="showPage('checkout')") 
+            | Proceed to Checkout

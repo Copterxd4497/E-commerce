@@ -1,0 +1,54 @@
+//- ===========================
+//- contact.pug - Contact page template
+//- ===========================
+extends layout
+
+block content
+  #contact.page
+    .container
+      h1.page-title Contact Us
+      
+      div(style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;")
+        .form-container
+          h3(style="margin-bottom: 1.5rem;") Send us a message
+          form(method="POST", action="/contact")
+            .form-group
+              label.form-label Name
+              input.form-input(type="text", name="name", placeholder="Your full name", required)
+            .form-group
+              label.form-label Email
+              input.form-input(type="email", name="email", placeholder="Your email address", required)
+            .form-group
+              label.form-label Subject
+              input.form-input(type="text", name="subject", placeholder="Message subject", required)
+            .form-group
+              label.form-label Message
+              textarea.form-input(name="message", rows="5", placeholder="Your message", required)
+            .form-group
+              button.btn.btn-primary(type="submit", style="width: 100%;") Send Message
+
+        div
+          h3(style="margin-bottom: 1.5rem;") Get in touch
+          div(style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);")
+            div(style="margin-bottom: 2rem;")
+              h4(style="color: #667eea; margin-bottom: 0.5rem;") 📍 Address
+              p
+                | 123 Commerce Street
+                br
+                | Business District
+                br
+                | City, State 12345
+            div(style="margin-bottom: 2rem;")
+              h4(style="color: #667eea; margin-bottom: 0.5rem;") 📞 Phone
+              p +1 (555) 123-4567
+            div(style="margin-bottom: 2rem;")
+              h4(style="color: #667eea; margin-bottom: 0.5rem;") ✉️ Email
+              p support@shopease.com
+            div
+              h4(style="color: #667eea; margin-bottom: 0.5rem;") 🕒 Business Hours
+              p
+                | Monday - Friday: 9:00 AM - 6:00 PM
+                br
+                | Saturday: 10:00 AM - 4:00 PM
+                br
+                | Sunday: Closed

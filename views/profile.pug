@@ -1,0 +1,88 @@
+extends layout
+
+block content
+  #profile.page
+    .container
+      .profile-section
+        .profile-header
+          .profile-avatar= user.initials || 'JD'
+          .profile-info
+            h2= user.name || 'John Doe'
+            p= user.email || 'john.doe@example.com'
+            p Member since #{user.memberSince || 'January 2023'}
+
+        .tabs
+          .tab.active(onclick="showTab('account-info')") Account Info
+          .tab(onclick="showTab('order-history')") Order History
+          .tab(onclick="showTab('addresses')") Addresses
+          .tab(onclick="showTab('payment-methods')") Payment Methods
+
+        #account-info.tab-content.active
+          form(method="POST", action="/profile/update")
+            div(style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;")
+              .form-group
+                label.form-label First Name
+                input.form-input(type="text", name="firstName", value=user.firstName || 'John')
+              .form-group
+                label.form-label Last Name
+                input.form-input(type="text", name="lastName", value=user.lastName || 'Doe')
+            .form-group
+              label.form-label Email Address
+              input.form-input(type="email", name="email", value=user.email || 'john.doe@example.com')
+            .form-group
+              label.form-label Phone Number
+              input.form-input(type="tel", name="phone", value=user.phone || '+1 (555) 123-4567')
+            .form-group
+              button.btn.btn-primary(type="submit") Update Profile
+
+        #order-history.tab-content
+          each order in userOrders || defaultOrders
+            .order-card
+              .order-header
+                div
+                  .order-number Order ##{order.number}
+                  div(style="color: #666; font-size: 0.9rem;") Placed on #{order.date}
+                .order-status(class=`status-${order.status.toLowerCase()}`)= order.status
+              .order-items
+                each item in order.items
+                  .order-item
+                    span= item.name
+                    span $#{item.price}
+              .order-total Total: $#{order.total}
+
+        #addresses.tab-content
+          div(style="margin-bottom: 2rem;")
+            button.btn.btn-primary Add New Address
+          
+          each address in userAddresses || defaultAddresses
+            .order-card
+              .order-header
+                div
+                  strong= address.label
+                  div(style="color: #666; margin-top: 0.5rem;")
+                    = address.street
+                    br
+                    = `${address.city}, ${address.state} ${address.zip}`
+                    br
+                    = address.country
+                div
+                  button.btn.btn-secondary(style="margin-right: 0.5rem;") Edit
+                  button.btn.btn-secondary Delete
+
+        #payment-methods.tab-content
+          div(style="margin-bottom: 2rem;")
+            button.btn.btn-primary Add New Payment Method
+          
+          each method in paymentMethods || defaultPaymentMethods
+            .order-card
+              .order-header
+                div
+                  strong= `💳 ${method.type} ending in ${method.lastFour}`
+                  div(style="color: #666; margin-top: 0.5rem;")
+                    = `Expires ${method.expiry}`
+                    if method.isDefault
+                      br
+                      | Default payment method
+                div
+                  button.btn.btn-secondary(style="margin-right: 0.5rem;") Edit
+                  button.btn.btn-secondary Remove
