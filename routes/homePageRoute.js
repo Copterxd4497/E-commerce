@@ -1,0 +1,14 @@
+const express = require("express");
+
+const homePageController = require("../controllers/homePageController");
+const productsController = require("./../controllers/productsController");
+const contactController = require("./../controllers/contactController");
+
+const router = express.Router();
+
+router.route("/").get(homePageController.homePage);
+router.route("/products").get(productsController.productsPage);
+router.route("/categories").get(productsController.catagories);
+router.route("/contact").get(contactController.cantactPage);
+
+module.exports = router;

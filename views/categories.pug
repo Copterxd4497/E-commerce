@@ -9,10 +9,23 @@ block content
       h1.page-title Product Categories
       
       .product-grid
-        each category in categories || defaultCategories
-          .product-card(style="cursor: pointer;")
-            .product-image(style="font-size: 4rem;")= category.icon
-            .product-info
-              h3.product-title= category.name
-              p.product-description= category.description
-              div(style="color: #667eea; font-weight: bold;")= `${category.productCount} Products`
+        if categories && categories.length
+          each category in categories
+            .product-card(style="cursor: pointer;")
+              .product-image(style="font-size: 4rem;")= category.icon
+              .product-info
+                h3.product-title= category.name
+                p.product-description= category.description
+                div(style="color: #667eea; font-weight: bold;")= category.productCount + ' Products'
+
+        else if defaultCategories && defaultCategories.length
+          each category in defaultCategories
+            .product-card(style="cursor: pointer;")
+              .product-image(style="font-size: 4rem;")= category.icon
+              .product-info
+                h3.product-title= category.name
+                p.product-description= category.description
+                div(style="color: #667eea; font-weight: bold;")= category.productCount + ' Products'
+                
+        else
+          p There are no categories right now.

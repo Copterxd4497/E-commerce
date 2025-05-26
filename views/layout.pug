@@ -6,20 +6,19 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="/css/style.css")
     title= title || "ShopEase - Your Online Store"
-    style
-    //-   include:css styles/main.css
+
   body
     //- Header Component
     header
       .container
         .header-content
-          a.logo(href="#", onclick="showPage('home')") ShopEase
+          a.logo(href="/") ShopEase
           nav
             ul.nav-menu
-              li: a(href="#", onclick="showPage('home')") Home
-              li: a(href="#", onclick="showPage('products')") Products
-              li: a(href="#", onclick="showPage('categories')") Categories
-              li: a(href="#", onclick="showPage('contact')") Contact
+              li: a(href="/") Home
+              li: a(href="/products") Products
+              li: a(href="/categories") Categories
+              li: a(href="/contact") Contact
           .user-actions
             if user
               a.btn.btn-secondary(href="#", onclick="showPage('profile')") Profile
