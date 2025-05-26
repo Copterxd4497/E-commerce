@@ -1,0 +1,29 @@
+[
+  {
+    "number": "ORD-2024-001",
+    "date": "March 15, 2024",
+    "status": "Delivered",
+    "items": [
+      { "name": "Smartphone Pro Max", "price": "899.99" },
+      { "name": "Wireless Headphones", "price": "199.99" }
+    ],
+    "total": "1,099.98"
+  },
+  {
+    "number": "ORD-2024-002",
+    "date": "March 20, 2024",
+    "status": "Shipped",
+    "items": [
+      { "name": "Gaming Console", "price": "499.99" },
+      { "name": "Gaming Mouse", "price": "79.99" }
+    ],
+    "total": "579.98"
+  },
+  {
+    "number": "ORD-2024-003",
+    "date": "March 25, 2024",
+    "status": "Processing",
+    "items": [{ "name": "Laptop Ultra", "price": "1,299.99" }],
+    "total": "1,299.99"
+  }
+]

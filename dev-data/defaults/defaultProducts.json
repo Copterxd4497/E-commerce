@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Smartphone Pro Max",
+    "price": "899.99",
+    "icon": "📱",
+    "description": "Latest flagship smartphone with advanced camera system and powerful processor."
+  },
+  {
+    "name": "Laptop Ultra",
+    "price": "1,299.99",
+    "icon": "💻",
+    "description": "High-performance laptop perfect for work and gaming with stunning display."
+  },
+  {
+    "name": "Wireless Headphones",
+    "price": "199.99",
+    "icon": "🎧",
+    "description": "Premium noise-canceling headphones with exceptional sound quality."
+  },
+  {
+    "name": "Smart Watch",
+    "price": "299.99",
+    "icon": "⌚",
+    "description": "Advanced fitness tracking and smart features in a sleek design."
+  },
+  {
+    "name": "Digital Camera",
+    "price": "799.99",
+    "icon": "📷",
+    "description": "Professional DSLR camera with multiple lenses and accessories."
+  },
+  {
+    "name": "Gaming Console",
+    "price": "499.99",
+    "icon": "🎮",
+    "description": "Next-generation gaming console with 4K graphics and exclusive games."
+  }
+]

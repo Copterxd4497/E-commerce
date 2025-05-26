@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Visa",
+    "lastFour": "1234",
+    "expiry": "12/2027",
+    "isDefault": true
+  },
+  {
+    "type": "Mastercard",
+    "lastFour": "5678",
+    "expiry": "08/2026",
+    "isDefault": false
+  }
+]

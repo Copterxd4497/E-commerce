@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Home Address",
+    "street": "123 Main Street",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345",
+    "country": "United States"
+  },
+  {
+    "label": "Work Address",
+    "street": "456 Business Ave",
+    "city": "Corporate City",
+    "state": "NY",
+    "zip": "54321",
+    "country": "United States"
+  }
+]
