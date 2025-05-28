@@ -10,5 +10,6 @@ const addressSchema = new Schema({
     street: {
         type: String,
         trim: true
-    }
+    },
+    
 })
