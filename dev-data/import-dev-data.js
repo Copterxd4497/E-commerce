@@ -14,12 +14,12 @@ const DB = process.env.DATABASE.replace(
 mongoose.connect(DB).then(() => console.log("DB connection successful!"));
 
 // READ JSON FILE
-const products = JSON.parse(fs.readFileSync(`${__dirname}/defaults/defaultProducts.json`, "utf-8"));
+const categories = JSON.parse(fs.readFileSync(`${__dirname}/defaults/defaultCategories.json`, "utf-8"));
 
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
-    await Products.create(products);
+    await Products.create(categories);
 
     console.log("Data successfully loaded!");
   } catch (err) {
