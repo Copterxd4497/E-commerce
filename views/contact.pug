@@ -7,25 +7,25 @@ block content
   #contact.page
     .container
       h1.page-title Contact Us
-      
+
       div(style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;")
         .form-container
           h3(style="margin-bottom: 1.5rem;") Send us a message
-          form(method="POST", action="/contact")
+          form(id="contactForm")
             .form-group
               label.form-label Name
-              input.form-input(type="text", name="name", placeholder="Your full name", required)
+              input.form-input.sending-name(type="text", name="name", placeholder="Your full name", required)
             .form-group
               label.form-label Email
-              input.form-input(type="email", name="email", placeholder="Your email address", required)
+              input.form-input.sending-email(type="email", name="email", placeholder="Your email address", required)
             .form-group
               label.form-label Subject
-              input.form-input(type="text", name="subject", placeholder="Message subject", required)
+              input.form-input.sending-subject(type="text", name="subject", placeholder="Message subject", required)
             .form-group
               label.form-label Message
-              textarea.form-input(name="message", rows="5", placeholder="Your message", required)
+              textarea.form-input.sending-message(name="message", rows="5", placeholder="Your message", required)
             .form-group
-              button.btn.btn-primary(type="submit", style="width: 100%;") Send Message
+              button.btn.btn-primary.click-button(type="submit", style="width: 100%;") Send Message
 
         div
           h3(style="margin-bottom: 1.5rem;") Get in touch

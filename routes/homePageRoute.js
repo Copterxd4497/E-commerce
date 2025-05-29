@@ -9,6 +9,6 @@ const router = express.Router();
 router.route("/").get(homePageController.homePage);
 router.route("/products").get(productsController.productsPage);
 router.route("/categories").get(productsController.catagories);
-router.route("/contact").get(contactController.cantactPage);
+router.route("/contact").get(contactController.contactPage);
 
 module.exports = router;

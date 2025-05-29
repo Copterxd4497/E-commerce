@@ -11,6 +11,22 @@ const addressSchema = new Schema({
         type: String,
         trim: true
     },
-    
+    city: {
+        type: String,
+        required: [true, "The address must have city"],
+        trim: true,
+    },
+    state: {
+        type: String,
+        required: [true, "The address must have state or convince."],
+        trim: true,
+        set: v => v ? v.toUpperCase() : v
+    },
+    zip: {
+        type: String,
+        trim: true,
+    }
 })
 
+const Address = mongoose.model('Address', addressSchema);
+module.exports = Address;
