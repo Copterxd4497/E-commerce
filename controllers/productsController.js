@@ -13,6 +13,7 @@ exports.categories = (req, res) => {
     );
     const categoriesData = fs.readFileSync(categoriesPath, "utf-8");
     const defaultCategories = JSON.parse(categoriesData);
+       
 
     res.status(200).render("categories", { defaultCategories });
   } catch (err) {
