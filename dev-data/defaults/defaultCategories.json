@@ -1,0 +1,8 @@
+[
+  { "name": "Electronics", "icon": "📱", "description": "Smartphones, laptops, tablets, and more tech gadgets", "productCount": 156 },
+  { "name": "Fashion", "icon": "👕", "description": "Clothing, shoes, accessories for men and women", "productCount": 89 },
+  { "name": "Home & Garden", "icon": "🏠", "description": "Furniture, décor, gardening tools, and appliances", "productCount": 234 },
+  { "name": "Gaming", "icon": "🎮", "description": "Consoles, games, accessories, and gaming gear", "productCount": 67 },
+  { "name": "Sports & Outdoors", "icon": "⚽", "description": "Exercise equipment, outdoor gear, and sports accessories", "productCount": 123 },
+  { "name": "Books & Media", "icon": "📚", "description": "Books, movies, music, and educational materials", "productCount": 345 }
+]
