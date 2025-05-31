@@ -2,7 +2,7 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-const Products = require("./../models/productsModel");
+const Category = require("./../models/categoriesModel");
 
 dotenv.config({ path: "./config.env" });
 
@@ -19,7 +19,7 @@ const categories = JSON.parse(fs.readFileSync(`${__dirname}/defaults/defaultCate
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
-    await Products.create(categories);
+    await Category.create(categories);
 
     console.log("Data successfully loaded!");
   } catch (err) {
@@ -31,7 +31,7 @@ const importData = async () => {
 // DELETE ALL DATA FROM DB
 const deleteData = async () => {
   try {
-    await Products.deleteMany();
+    await Category.deleteMany();
 
     console.log("Data successfully deleted!");
   } catch (err) {
