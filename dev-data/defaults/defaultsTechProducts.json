@@ -2,25 +2,25 @@
   {
     "emoji": "🖥️",
     "title": "Desktop Computer",
-    "price": "$1,499.99",
+    "price": 1499.99,
     "description": "Powerful desktop computer for professional work and creative tasks."
   },
   {
     "emoji": "🖨️",
     "title": "Wireless Printer",
-    "price": "$149.99",
+    "price": 149.99,
     "description": "All-in-one wireless printer with scanning and copying capabilities."
   },
   {
     "emoji": "🖱️",
     "title": "Gaming Mouse",
-    "price": "$79.99",
+    "price": 79.99,
     "description": "High-precision gaming mouse with customizable RGB lighting."
   },
   {
     "emoji": "⌨️",
     "title": "Mechanical Keyboard",
-    "price": "$129.99",
+    "price": 129.99,
     "description": "Premium mechanical keyboard with tactile switches and backlighting."
   }
 ]

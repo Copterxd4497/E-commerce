@@ -2,7 +2,7 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-const Category = require("./../models/categoriesModel");
+const TechProduct = require("./../models/techProductsModel");
 
 dotenv.config({ path: "./config.env" });
 
@@ -14,12 +14,12 @@ const DB = process.env.DATABASE.replace(
 mongoose.connect(DB).then(() => console.log("DB connection successful!"));
 
 // READ JSON FILE
-const categories = JSON.parse(fs.readFileSync(`${__dirname}/defaults/defaultCategories.json`, "utf-8"));
+const techProducts = JSON.parse(fs.readFileSync(`${__dirname}/defaults/defaultsTechProducts.json`, "utf-8"));
 
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
-    await Category.create(categories);
+    await TechProduct.create(techProducts);
 
     console.log("Data successfully loaded!");
   } catch (err) {
@@ -31,7 +31,7 @@ const importData = async () => {
 // DELETE ALL DATA FROM DB
 const deleteData = async () => {
   try {
-    await Category.deleteMany();
+    await TechProduct.deleteMany();
 
     console.log("Data successfully deleted!");
   } catch (err) {
