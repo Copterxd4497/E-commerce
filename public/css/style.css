@@ -17,7 +17,7 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
+/* Header (Unified for all pages) */
 header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -43,6 +43,8 @@ header {
   display: flex;
   list-style: none;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
@@ -51,8 +53,10 @@ header {
   transition: opacity 0.3s;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
   opacity: 0.8;
+  font-weight: bold;
 }
 
 .user-actions {
@@ -110,6 +114,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Search Bar */
@@ -173,7 +189,9 @@ main {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .product-card:hover {
